@@ -1,0 +1,7 @@
+1. buat tabel student
+2. buat model student
+3. buat seeder student
+4. lakukan migrate database di terminal
+
+Kolom yang harus ada :
+  id, nama, jk, created_at, updated_at
