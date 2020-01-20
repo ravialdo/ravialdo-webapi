@@ -5,3 +5,12 @@
 
 Kolom yang harus ada :
   id, nama, jk, created_at, updated_at
+
+Install Requirement untuk Frontend
+Beberapa hal yang harus dicek untuk Frontend Development Javascript
+1. Node JS (cmd : node -v)
+  Install di https://nodejs.org/en/
+
+  Langkah Install Library Frontend
+  1. npm install (di dalam project laravel) menggunakan command prompt
+  2. buka situs laravel.com
