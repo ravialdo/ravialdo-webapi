@@ -9,11 +9,14 @@ Kolom yang harus ada :
 Install Requirement untuk Frontend
 Beberapa hal yang harus dicek untuk Frontend Development Javascript
 1. Node JS (cmd : node -v)
-  Install di https://nodejs.org/en/
+   Install di https://nodejs.org/en/
 
   Langkah Install Library Frontend
   1. npm install (di dalam project laravel) menggunakan command prompt
   2. buka situs laravel.com masuk ke Documentation dan klik list disamping kiri daftar Frontend dan pilih Frontend Scaffolding,
      dan lakukan install seperti yang di perintahkan :
     
-      composer require laravel/ui --dev
+          composer require laravel/ui --dev
+
+  3. npm install && npm run dev
+  4. npm run watch
