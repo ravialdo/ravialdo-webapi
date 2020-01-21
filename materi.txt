@@ -13,4 +13,7 @@ Beberapa hal yang harus dicek untuk Frontend Development Javascript
 
   Langkah Install Library Frontend
   1. npm install (di dalam project laravel) menggunakan command prompt
-  2. buka situs laravel.com
+  2. buka situs laravel.com masuk ke Documentation dan klik list disamping kiri daftar Frontend dan pilih Frontend Scaffolding,
+     dan lakukan install seperti yang di perintahkan :
+    
+      composer require laravel/ui --dev
