@@ -5,8 +5,16 @@
                 <div class="card">
                     <div class="card-header">Test API</div>
 
-                    <div class="card-body">
+                    <div v-if="loading === false" class="card-body">
                         Contoh hasil Pemanggilan Endpoint API
+
+                        <p>Response : </p>
+                        {{ data }}
+
+                        {{ error }}
+                   </div> 
+                    <div v-else>
+                        loading...
                     </div>
                 </div>
             </div>
@@ -16,13 +24,34 @@
 
 <script>
     export default {
-        mounted() {
+
+        data() {
+            return {
+                data: [],
+                error: null,
+                loading:false
+            }
+        },
+
+        mounted() { 
             this.getData()
         },
 
         methods: {
+            
             getData(){
+                this.loading = true
                 axios.get('/testapi')
+
+                .then((res) => {
+                    this.data = res.data.students.data
+                    this.loading = false
+                })
+                .catch((error) => {
+                    this.error = error.message
+                    this.loading = false
+                })
+
             }
         }
     }

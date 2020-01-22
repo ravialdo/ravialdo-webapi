@@ -1948,13 +1948,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      data: [],
+      error: null,
+      loading: false
+    };
+  },
   mounted: function mounted() {
     this.getData();
   },
   methods: {
     getData: function getData() {
-      axios.get('/testapi');
+      var _this = this;
+
+      this.loading = true;
+      axios.get('/testapi').then(function (res) {
+        _this.data = res.data.students.data;
+        _this.loading = false;
+      })["catch"](function (error) {
+        _this.error = error.message;
+        _this.loading = false;
+      });
     }
   }
 });
@@ -37331,30 +37355,35 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [_vm._v("Test API")]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    Contoh hasil Pemanggilan Endpoint API\n                "
-              )
-            ])
-          ])
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [_vm._v("Test API")]),
+          _vm._v(" "),
+          _vm.loading === false
+            ? _c("div", { staticClass: "card-body" }, [
+                _vm._v(
+                  "\n                    Contoh hasil Pemanggilan Endpoint API\n\n                    "
+                ),
+                _c("p", [_vm._v("Response : ")]),
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(_vm.data) +
+                    "\n\n                    " +
+                    _vm._s(_vm.error) +
+                    "\n               "
+                )
+              ])
+            : _c("div", [
+                _vm._v("\n                    loading...\n                ")
+              ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
