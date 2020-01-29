@@ -1958,6 +1958,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37368,7 +37385,7 @@ var render = function() {
     [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card mt-3" }, [
             _c("div", { staticClass: "card-header" }, [_vm._v("Test API")]),
             _vm._v(" "),
             _vm.loading === false
@@ -37376,16 +37393,25 @@ var render = function() {
                   _vm._v(
                     "\n                    Contoh hasil Pemanggilan Endpoint API\n\n                    "
                   ),
-                  _c("p", [_vm._v("Response : ")]),
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm.data) +
-                      "\n\n                    " +
-                      _vm._s(_vm.error) +
-                      "\n               "
-                  )
+                  _c("table", { staticClass: "table table-striped mt-3" }, [
+                    _vm._m(0),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.data, function(item) {
+                        return _c("tr", { key: "item.id" }, [
+                          _c("td", [_vm._v(_vm._s(item.nama))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.jk))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.created_at))])
+                        ])
+                      }),
+                      0
+                    )
+                  ])
                 ])
-              : _c("div", [
+              : _c("div", { staticClass: "card-body" }, [
                   _vm._v("\n                    loading...\n                ")
                 ])
           ])
@@ -37397,7 +37423,20 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", { staticClass: "table-success" }, [
+      _c("th", [_vm._v("Nama")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Jk")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Dibuat Pada")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -49594,13 +49633,13 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 var options = {
-  color: '#bffaf3',
-  failedColor: '#874b4b',
+  color: '#42e6a4',
+  failedColor: '#ce0f3d',
   thickness: '5px',
   transition: {
     speed: '0.2s',
     opacity: '0.6s',
-    termination: 300
+    termination: 200
   },
   autoRevert: true,
   location: 'top',

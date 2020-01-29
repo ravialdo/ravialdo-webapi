@@ -2,24 +2,41 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card mt-3">
                     <div class="card-header">Test API</div>
 
                     <div v-if="loading === false" class="card-body">
                         Contoh hasil Pemanggilan Endpoint API
 
-                        <p>Response : </p>
+                        <table class="table table-striped mt-3">
+                            <thead class="table-success">
+                                <th>Nama</th>
+                                <th>Jk</th>
+                                <th>Dibuat Pada</th>
+                            </thead>
+                            <tbody>
+
+                                <tr v-for="item in data" key="item.id">
+                                    <td>{{ item.nama }}</td>
+                                    <td>{{ item.jk }}</td>
+                                    <td>{{ item.created_at }}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <!-- <p>Response : </p>
                         {{ data }}
 
-                        {{ error }}
+                        {{ error }} -->
                    </div> 
-                    <div v-else>
+                    <div v-else  class="card-body">
                         loading...
                     </div>
                 </div>
-            </div>    
+            </div> 
         </div>
-
+        <!-- Progress bar vue -->
         <vue-progress-bar></vue-progress-bar>
     </div>
 </template>

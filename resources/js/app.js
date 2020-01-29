@@ -11,13 +11,13 @@ window.Vue = require('vue');
 import VueProgressBar from 'vue-progressbar'
 
 const options = {
-    color: '#bffaf3',
-    failedColor: '#874b4b',
+    color: '#42e6a4',
+    failedColor: '#ce0f3d',
     thickness: '5px',
     transition: {
       speed: '0.2s',
       opacity: '0.6s',
-      termination: 300
+      termination: 200
     },
     autoRevert: true,
     location: 'top',
