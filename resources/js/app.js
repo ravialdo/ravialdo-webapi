@@ -9,6 +9,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueProgressBar from 'vue-progressbar'
+import Notifications from 'vue-notification'
 
 const options = {
     color: '#42e6a4',
@@ -17,7 +18,7 @@ const options = {
     transition: {
       speed: '0.2s',
       opacity: '0.6s',
-      termination: 200
+      termination: 350
     },
     autoRevert: true,
     location: 'top',
@@ -25,6 +26,7 @@ const options = {
   }
   
   Vue.use(VueProgressBar, options)
+  Vue.use(Notifications)
 
 /**
  * The following block of code may be used to automatically register your

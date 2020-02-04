@@ -5,6 +5,8 @@
                 <div class="card mt-3">
                     <div class="card-header">Test API</div>
 
+                        <notifications group="pesan" position="top center"/>
+
                     <div v-if="loading === false" class="card-body">
                         Contoh hasil Pemanggilan Endpoint API
 
@@ -62,16 +64,33 @@
             getData(){
                 this.loading = true
                 this.$Progress.start()
+                
                 axios.get('/testapi')
 
                 .then((res) => {
                     this.data = res.data.students.data
                     this.loading = false
+
+                    this.$notify({
+                        group: 'pesan',
+                        title: 'Pesan!',
+                        type: 'success',
+                        text: 'Request Axios Berhasil.'
+                     });
+
                     this.$Progress.finish()
                 })
                 .catch((error) => {
                     this.error = error.message
                     this.loading = false
+
+                    this.$notify({
+                        group: 'pesan',
+                        title: 'Pesan!',
+                        type: 'error',
+                        text: 'Request Axios Gagal.'
+                     });
+
                     this.$Progress.fail()
                 })
 

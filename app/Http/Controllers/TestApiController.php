@@ -13,7 +13,7 @@ class TestApiController extends Controller
     public function test(){
 
         $data = [
-          'students' => Student::paginate(1),
+          'students' => Student::paginate(3),
         #  'teachers' => Teacher::all()
         ];
 
